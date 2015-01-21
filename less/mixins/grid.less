@@ -3,6 +3,14 @@
 // Generate semantic grid columns with these mixins.
 
 // Centered container element
+.container-fluid() {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left:  0;
+  padding-right: 0;
+  &:extend(.clearfix all);
+}
+
 .container-fixed(@gutter: @grid-gutter-width) {
   margin-right: auto;
   margin-left: auto;

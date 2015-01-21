@@ -2,11 +2,16 @@
 // Buttons
 // --------------------------------------------------
 
-
 // Base styles
 // --------------------------------------------------
 
 .btn {
+  border-radius: 0;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.35), 0 0 3px 0 rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.35), 0 0 3px 0 rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.35), 0 0 3px 0 rgba(0, 0, 0, 0.35);
+  font-size: 16px;
+  padding: 5px 20px;
   display: inline-block;
   margin-bottom: 0; // For input.btn
   font-weight: @btn-font-weight;
@@ -40,7 +45,7 @@
   &.active {
     outline: 0;
     background-image: none;
-    .box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+    .box-shadow(inset 0 3px 5px rgba(0, 0, 0, .125));
   }
 
   &.disabled,
@@ -53,33 +58,87 @@
   }
 }
 
-
 // Alternate buttons
 // --------------------------------------------------
 
 .btn-default {
   .button-variant(@btn-default-color; @btn-default-bg; @btn-default-border);
 }
+
 .btn-primary {
-  .button-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-border);
+  color: @btn-primary-color;
+
+  background: #37a7e8; /* Old browsers */
+  background: -moz-linear-gradient(top, #37a7e8 0%, #0384de 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #37a7e8), color-stop(100%, #0384de)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #37a7e8 0%, #0384de 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #37a7e8 0%, #0384de 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #37a7e8 0%, #0384de 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #37a7e8 0%, #0384de 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#37a7e8', endColorstr='#0384de', GradientType=0); /* IE6-9 */
+
+  text-shadow: 1px 1px 1px rgba(16, 127, 196, 0.75);
+  border-top: 1px solid #50dbf5;
+  border-left: 1px solid #3B9CB0;
+  border-bottom: 3px solid #0b47c7;
+
+  &:hover {
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.30), 0 0 4px 0 rgba(0, 0, 0, 0.30);
+    -webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.30), 0 0 4px 0 rgba(0, 0, 0, 0.30);
+    -moz-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.30), 0 0 4px 0 rgba(0, 0, 0, 0.30);
+
+    background: #3AAAEE; /* Old browsers */
+    background: -moz-linear-gradient(top, #3AAAEE 0%, #038FF0 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3AAAEE), color-stop(100%, #038FF0)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #3AAAEE 0%, #038FF0 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #3AAAEE 0%, #038FF0 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #3AAAEE 0%, #038FF0 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #3AAAEE 0%, #038FF0 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3AAAEE', endColorstr='#038FF0', GradientType=0); /* IE6-9 */
+
+    text-shadow: 1px 1px 1px rgba(16, 127, 196, 0.75);
+    border-top: 1px solid #50dbf5;
+    border-left: 1px solid #3B9CB0;
+    border-bottom: 3px solid #0b47c7;
+  }
+
+  &:focus {
+    border-top: 3px solid #0039af;
+    border-bottom: 1px solid #0b528c;
+    border-left: 1px solid #0b528c;
+    text-shadow: 1px 1px 1px rgba(11, 94, 208, 1);
+    color: #E5E5FD;
+
+    background: #0060be; /* Old browsers */
+    background: -moz-linear-gradient(top, #0060be 0%, #158bcf 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #0060be), color-stop(100%, #158bcf)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #0060be 0%, #158bcf 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #0060be 0%, #158bcf 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #0060be 0%, #158bcf 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #0060be 0%, #158bcf 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0060be', endColorstr='#158bcf', GradientType=0); /* IE6-9 */
+  }
 }
+
 // Success appears as green
 .btn-success {
   .button-variant(@btn-success-color; @btn-success-bg; @btn-success-border);
 }
+
 // Info appears as blue-green
 .btn-info {
   .button-variant(@btn-info-color; @btn-info-bg; @btn-info-border);
 }
+
 // Warning appears as orange
 .btn-warning {
   .button-variant(@btn-warning-color; @btn-warning-bg; @btn-warning-border);
 }
+
 // Danger and error appear as red
 .btn-danger {
   .button-variant(@btn-danger-color; @btn-danger-bg; @btn-danger-border);
 }
-
 
 // Link buttons
 // -------------------------
@@ -107,7 +166,7 @@
   &:hover,
   &:focus {
     color: @link-hover-color;
-    text-decoration: @link-hover-decoration;
+    text-decoration: underline;
     background-color: transparent;
   }
   &[disabled],
@@ -120,7 +179,6 @@
   }
 }
 
-
 // Button Sizes
 // --------------------------------------------------
 
@@ -128,14 +186,15 @@
   // line-height: ensure even-numbered height of button next to large input
   .button-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @border-radius-large);
 }
+
 .btn-sm {
   // line-height: ensure proper height of button next to small input
   .button-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @border-radius-small);
 }
+
 .btn-xs {
   .button-size(@padding-xs-vertical; @padding-xs-horizontal; @font-size-small; @line-height-small; @border-radius-small);
 }
-
 
 // Block button
 // --------------------------------------------------
